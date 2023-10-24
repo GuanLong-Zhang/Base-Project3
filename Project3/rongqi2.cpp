@@ -166,15 +166,15 @@ void test77()
 	mapprint1(m1);   //Ö¸¶¨½µĞòÅÅĞò
 }
 
-int main()
-{
-	//test71();
-	//test73();
-	//test74();
-	//test75();
-	//test76();
-	test77();
-
-	system("pause");
-	return 0;
-}
+//int main()
+//{
+//	//test71();
+//	//test73();
+//	//test74();
+//	//test75();
+//	//test76();
+//	test77();
+//
+//	system("pause");
+//	return 0;
+//}
