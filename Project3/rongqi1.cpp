@@ -494,10 +494,10 @@ void test70()
 	multisetprint(m);
 }
 
-class compare1
+class compare1   //·Âº¯Êý
 {
 public:
-	bool operator()(int a, int b)const     //·Âº¯Êý
+	bool operator()(int a, int b)const     
 	{
 		return a > b;
 	}
@@ -524,7 +524,7 @@ public:
 	}
 };
 
-class compare2
+class compare2    //·Âº¯Êý
 {
 public:
 	bool operator()(const person9& p1, const person9& p2)const

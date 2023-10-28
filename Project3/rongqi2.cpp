@@ -130,7 +130,7 @@ void test76()
 	cout << "数量为：" << num << endl;
 }
 
-class mapcompare
+class mapcompare     //仿函数
 {
 public:
 	bool operator()(int a, int b) const

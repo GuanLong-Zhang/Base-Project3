@@ -127,7 +127,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="algorithm.cpp" />
     <ClCompile Include="anli.cpp" />
+    <ClCompile Include="function_object.cpp" />
     <ClCompile Include="moban.cpp" />
     <ClCompile Include="moban1.cpp" />
     <ClCompile Include="moban2.cpp" />
