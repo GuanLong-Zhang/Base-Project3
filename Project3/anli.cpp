@@ -82,6 +82,7 @@ void test84()
 }
 
 
+
 //容器案例1 评委打分
 //vector存放5个人 deque存放打的10个分数
 class person6
