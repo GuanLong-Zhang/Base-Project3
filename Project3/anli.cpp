@@ -81,9 +81,6 @@ void test84()
 
 }
 
-# define 人事部门 0    //宏定义
-# define 技术部门 1
-# define 管理部门 2
 
 //容器案例1 评委打分
 //vector存放5个人 deque存放打的10个分数
@@ -221,7 +218,12 @@ void test65()
 
 }
 
-//容器综合案例  员工分组
+
+# define 人事部门 0    //宏定义
+# define 技术部门 1
+# define 管理部门 2
+
+//容器案例2 员工分组
 class worker
 {
 public:
