@@ -8,10 +8,84 @@
 # include"myarray.hpp"
 using namespace std;
 
+//类模板案例  myarray.hpp
+void printmyarray(myarray<int, int, int>& m)
+{
+	for (int i = 0; i < m.getsize(); i++)
+	{
+		cout << m[i] << " ";
+	}
+	cout << endl;
+}
+
+class person13
+{
+public:
+	string name;
+	int age;
+	person13()
+	{
+
+	}
+	person13(string a, int b)
+	{
+		name = a;
+		age = b;
+	}
+};
+
+void printperson13(myarray<person13, int, int>& m)
+{
+	for (int i = 0; i < m.getsize(); i++)
+	{
+		cout << "姓名：" << m[i].name << " 年龄：" << m[i].age << endl;
+	}
+}
+
+void test84()
+{
+	//内置数据类型
+	myarray<int, int, int> m1(5);
+	for (int i = 0; i < 5; i++)
+	{
+		m1.pushback(i);   //尾插
+	}
+	cout << "m1输出" << endl;
+	printmyarray(m1);
+	cout << "容量：" << m1.getcapacity() << endl;
+	cout << "大小：" << m1.getsize() << endl;
+
+	myarray<int, int, int> m2(m1);  //拷贝构造
+	cout << "m2输出" << endl;
+	printmyarray(m2);
+	m2.popback();   //尾删
+	cout << "容量：" << m2.getcapacity() << endl;    //容量不变 大小变了
+	cout << "大小：" << m2.getsize() << endl;
+
+	myarray<int, int, int> m3(100);
+	m3 = m1;
+
+	//自定义数据类型
+	myarray<person13, int, int> m4(10);
+	person13 p1("小王", 18);
+	person13 p2("小李", 28);
+	person13 p3("小张", 38);
+	person13 p4("小蓝", 48);
+	m4.pushback(p1);
+	m4.pushback(p2);
+	m4.pushback(p3);
+	m4.pushback(p4);
+	printperson13(m4);
+	cout << "容量：" << m4.getcapacity() << endl;
+	cout << "大小：" << m4.getsize() << endl;
+
+}
+
 # define 人事部门 0    //宏定义
 # define 技术部门 1
 # define 管理部门 2
 
+//容器案例1 评委打分
 //vector存放5个人 deque存放打的10个分数
 class person6
 {
@@ -90,7 +164,7 @@ void test56()
 	vectorprint(v);
 }
 
-//list容器案例
+//list容器案例 排序
 class person8
 {
 public:
@@ -147,7 +221,7 @@ void test65()
 
 }
 
-//容器综合案例
+//容器综合案例  员工分组
 class worker
 {
 public:
@@ -233,89 +307,16 @@ void test78()
 	multimap<int, worker> m;
 	setgroup(v,m);
 	showworker(m);
-
 } 
 
-//类模板案例  myarray.hpp
-void printmyarray(myarray<int, int, int>& m)
-{
-	for (int i = 0; i < m.getsize(); i++)
-	{
-		cout << m[i] << " ";
-	}
-	cout << endl;
-}
-
-class person13
-{
-public:
-	string name;
-	int age;
-	person13()
-	{
-
-	}
-	person13(string a, int b)
-	{
-		name = a;
-		age = b;
-	}
-};
-
-void printperson13(myarray<person13, int, int>& m)
-{
-	for (int i = 0; i < m.getsize(); i++)
-	{
-		cout << "姓名："<< m[i].name <<" 年龄："<<m[i].age<<endl;
-	}
-}
-
-void test84()
-{
-	//内置数据类型
-	myarray<int, int, int> m1(5);
-	for (int i = 0; i < 5; i++)
-	{
-		m1.pushback(i);   //尾插
-	}
-	cout << "m1输出" << endl;
-	printmyarray(m1);
-	cout << "容量：" << m1.getcapacity() << endl;
-	cout << "大小：" << m1.getsize() << endl;
-
-	myarray<int, int, int> m2(m1);  //拷贝构造
-	cout << "m2输出" << endl;
-	printmyarray(m2);
-	m2.popback();   //尾删
-	cout << "容量：" << m2.getcapacity() << endl;    //容量不变 大小变了
-	cout << "大小：" << m2.getsize() << endl;
-
-	myarray<int, int, int> m3(100);
-	m3 = m1;
-
-	//自定义数据类型
-	myarray<person13, int, int> m4(10);
-	person13 p1("小王", 18);
-	person13 p2("小李", 28);
-	person13 p3("小张", 38);
-	person13 p4("小蓝", 48);
-	m4.pushback(p1);
-	m4.pushback(p2);
-	m4.pushback(p3);
-	m4.pushback(p4);
-	printperson13(m4);
-	cout << "容量：" << m4.getcapacity() << endl;    
-	cout << "大小：" << m4.getsize() << endl;
-
-}
 
 //int main()
 //{
+//	//test84();
 //	//test56();
 //	//test65();
 //	//test78();
-//	test84();
-//
+
 //	system("pause");
 //	return 0;
 //}
